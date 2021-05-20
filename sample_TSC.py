@@ -138,7 +138,7 @@ def assign_types(list_of_modified_files):
     types = {t:[] for t in types}
     for filename in list_of_modified_files:
         types[os.path.splitext(filename)[1]].append(filename)
-    
+## adding a comment    
 
 # does the parent project exist?
 # parents = {proj.name:proj.id for proj in all_project_items if not proj.parent_id}
