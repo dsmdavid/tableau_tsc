@@ -25,7 +25,6 @@ jobs:
           echo "this is the pull_request.base.sha: ${{ github.event.pull_request.base.sha }} "
           echo "this is the github.sha: ${{ github.sha }} "
           git diff --name-status ${{ github.event.pull_request.base.sha }} ${{ github.sha }}  
-          echo "::set-output name=all::$(git diff --name-status ${{ github.event.pull_request.base.sha }} ${{ github.sha }})"
           echo "::set-output name=ts::$(git diff --name-status --diff-filter=ACMRT ${{ github.event.pull_request.base.sha }} ${{ github.sha }} | grep .ts$ | xargs)"
   lint:
     runs-on: ubuntu-latest
