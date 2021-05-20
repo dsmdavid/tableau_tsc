@@ -93,19 +93,52 @@ def process_full_path(filename):
         if not project:
             project = create_project(project_name=p.parts[position], parent_id=previous_id)
         # process intermediate
-    logger.debug(f'Finished processing full path for {filename}')
+    logger.debug(f'Finished processing full path forxs {filename}')
     return project.id
 
-lf = []
-for root, dirs, files in os.walk('.', topdown=False):
-    lf.extend([os.path.join(root, name) for name in files])
-twbx = list(filter(lambda x: 'twbx' in x, lf))
-print(twbx)
-sample = twbx[0]
-print(sample)
-print('start_processing')
-print(process_full_path(sample))
-print('end_processing')
+def modified_files():
+    '''sample code to return modified files'''
+    lf = []
+    for root, dirs, files in os.walk('.', topdown=False):
+        lf.extend([os.path.join(root, name) for name in files])
+    return lf
+    twbx = list(filter(lambda x: 'twbx' in x, lf))
+    print(twbx)
+    sample = twbx[0]
+    print(sample)
+    print('start_processing')
+    print(process_full_path(sample))
+    print('end_processing')
+
+def identify_type(filename):
+    '''Receives the filename, with extension.
+    Four valid options:
+    - twb
+    - twbx
+    - tds
+    - tdsx
+    Anything else will result in a: 'skip' option
+    returns the type
+    '''
+    extension = os.path.splitext(filename)[1]
+    if extension == '.twb':
+        pass
+    elif extension == '.twbx':
+        upload_file
+    elif extension == '.tds':
+        pass
+    elif extension == '.tdsx':
+        pass
+    else:
+        return 'skip'
+
+@log_start
+def assign_types(list_of_modified_files):
+    types = ['.twb','.twbx','.tds','.tdsx']
+    types = {t:[] for t in types}
+    for filename in list_of_modified_files:
+        types[os.path.splitext(filename)[1]].append(filename)
+    
 
 # does the parent project exist?
 # parents = {proj.name:proj.id for proj in all_project_items if not proj.parent_id}
