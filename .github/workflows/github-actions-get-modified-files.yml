@@ -9,9 +9,6 @@ jobs:
         description: 'All changes'
       ts: ${{ steps.changes.outputs.ts }}
         description: 'Grouped changes'
-      placeholder:
-        description: 'placeholder value'
-        value: 'Always on'
     steps:
         # Make sure we have some code to diff.
       - name: Checkout repository
@@ -25,13 +22,14 @@ jobs:
           echo "this is the pull_request.base.sha: ${{ github.event.pull_request.base.sha }} "
           echo "this is the github.sha: ${{ github.sha }} "
           git diff --name-status ${{ github.event.pull_request.base.sha }} ${{ github.sha }}  
+          echo "::set-output name=all::$(git diff --name-status ${{ github.event.pull_request.base.sha }} ${{ github.sha }})"
           echo "::set-output name=ts::$(git diff --name-status --diff-filter=ACMRT ${{ github.event.pull_request.base.sha }} ${{ github.sha }} | grep .ts$ | xargs)"
   lint:
     runs-on: ubuntu-latest
     # require the first job to have ran
     needs: changedfiles
     # only run there are changed files
-    if: ${{needs.changedfiles.outputs.placeholder}}
+    if: ${{needs.changedfiles.outputs.all}}
     steps:
       - name: echo changed files
         run: |
