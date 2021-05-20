@@ -15,6 +15,8 @@ jobs:
         id: changes
         # Set outputs using the command.
         run: |
+          echo "this is the pull_request.base.sha: ${{ github.event.pull_request.base.sha }} "
+          echo "this is the github.sha: ${{ github.sha }} "
           echo "::set-output name=all::$(git diff --name-status ${{ github.event.pull_request.base.sha }} ${{ github.sha }} | xargs)"
           echo "::set-output name=ts::$(git diff --name-status --diff-filter=ACMRT ${{ github.event.pull_request.base.sha }} ${{ github.sha }} | grep .ts$ | xargs)"
   lint:
@@ -22,7 +24,7 @@ jobs:
     # require the first job to have ran
     needs: changedfiles
     # only run there are changed files
-    if: ${{needs.changedfiles.outputs.ts}}
+    if: ${{needs.changedfiles.outputs.all}}
     steps:
       - name: echo changed files
         run: |
