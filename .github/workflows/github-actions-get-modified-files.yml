@@ -1,5 +1,5 @@
 name: GitHub Actions Get Modified Files
-on: [pull_request]
+on: [push, pull_request]
 jobs:
   changedfiles:
     runs-on: ubuntu-latest
@@ -11,6 +11,8 @@ jobs:
         # Make sure we have some code to diff.
       - name: Checkout repository
         uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
       - name: Get changed files
         id: changes
         # Set outputs using the command.
