@@ -1,5 +1,5 @@
 name: GitHub Actions Get Modified Files
-on: [push]
+on: [pull_request]
 jobs:
   changedfiles:
     runs-on: ubuntu-latest
