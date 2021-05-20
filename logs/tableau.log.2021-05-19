@@ -1,0 +1,11 @@
+2021-05-19 15:42:59,953 - __main__ - DEBUG - call - Starting function does_project_exist
+2021-05-19 15:43:01,154 - __main__ - DEBUG - call - Starting function create_project
+2021-05-19 15:43:02,861 - __main__ - INFO - create_project - ('sample_wb', 'd73b57f2-add3-44b7-ab89-eeac87d09f60') was created
+2021-05-19 15:43:03,027 - __main__ - DEBUG - call - Starting function does_project_exist
+2021-05-19 15:44:23,333 - __main__ - DEBUG - call - Starting function does_project_exist
+2021-05-19 15:44:23,334 - __main__ - DEBUG - login - Logging in from does_project_exist
+2021-05-19 15:44:59,808 - __main__ - DEBUG - call - Starting function does_project_exist
+2021-05-19 15:44:59,809 - __main__ - DEBUG - login - Logging in from does_project_exist
+2021-05-19 15:45:01,058 - __main__ - DEBUG - call - Starting function create_project
+2021-05-19 15:45:01,058 - __main__ - DEBUG - login - Logging in from create_project
+2021-05-19 15:45:02,719 - __main__ - INFO - create_project - ('sample_wb', '72962938-b83f-444b-8fa7-03d02c6edc0e') was created
