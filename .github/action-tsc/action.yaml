@@ -1,0 +1,12 @@
+name: modified_files
+description: 'TSC mod files'
+inputs:
+  modified_files:  # id of input
+    description: 'List of files modified'
+    required: true
+    default: 'World'
+runs:
+  using: 'docker'
+  image: './Dockerfile'
+  args:
+    - ${{ inputs.modified_files }}
