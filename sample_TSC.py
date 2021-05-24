@@ -145,7 +145,7 @@ def assign_types(list_of_modified_files):
 
 if __name__ == '__main__':
     with open('modified_files.txt','r') as f:
-        lf = f.readlines()
+        lf = f.read()
     print(lf)
     lf = lf.replace('"','').replace('\n','').replace("'",'')
     lf = lf.split(' ')
