@@ -42,13 +42,14 @@ jobs:
           echo ${{needs.changedfiles.outputs.all}}
   tsc:
     needs: lint
+    runs-on: ubuntu-latest
     steps:
       - name: Attempt docker
         uses: actions/modified_files_20210514
         env:
           tableau_pat_name: ${{ secrets.tableau_pat_name }}
           tableau_pat_token: ${{ secrets.tableau_pat_token }}
-          tableau_site: ${{ tableau_site }}
+          tableau_site: ${{ secrets.tableau_site }}
 
         with:
           modified_files: ${{needs.changedfiles.outputs.all}}
