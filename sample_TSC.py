@@ -144,16 +144,21 @@ def assign_types(list_of_modified_files):
         types[os.path.splitext(filename)[1]].append(filename)
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser()
-    parser.add_argument('--modified', help='Files to process as a space separated list', required=False)
-    args = parser.parse_args()
-    print('Modified files passed:')
-    print(args.modified)
-    lf = args.modified
-    if lf is None:
+    with open('modified_files.txt','r') as f:
+        lf = f.readlines()
+    print(lf)
+    lf = lf.replace('"','').replace('\n','').replace("'",'')
+    lf = lf.split(' ')
+    lf = list(filter(lambda x: 'twb' in x or 'tds' in x, lf))
+    print(lf)
+    # parser = argparse.ArgumentParser()
+    # parser.add_argument('--modified', help='Files to process as a space separated list', required=False)
+    # args = parser.parse_args()
+    # print('Modified files passed:')
+    # print(args.modified)
+    # lf = args.modified
+    if not lf:
         lf = modified_files()
-    else:
-        lf = lf.split(' ')
 
     twbx = list(filter(lambda x: 'twbx' in x, lf))
     print(twbx)
