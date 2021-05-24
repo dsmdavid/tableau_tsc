@@ -34,7 +34,7 @@ jobs:
           echo "echoing ls"
           ls
           touch test.tst
-          ls
+          ls | xargs echo
           echo "echoing outputs.ts"
           echo ${{needs.changedfiles.outputs.ts}}
           echo "echoing outputs.all"
