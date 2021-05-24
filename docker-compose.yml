@@ -1,0 +1,22 @@
+version: '3.3'
+services:
+    tsc:
+        build: .
+        environment:
+            - tableau_pat_name=$tableau_pat_name
+            - tableau_pat_token=$tableau_pat_token
+            - tableau_site=$tableau_site
+
+
+    tsc-local:
+        command: /bin/bash
+        build: .
+        volumes:
+            - $HOME/.aws:/root/.aws
+            - ./:/app/
+
+        environment:
+            - AWS_PROFILE=mario
+            - tableau_pat_name=$tableau_pat_name
+            - tableau_pat_token=$tableau_pat_token
+            - tableau_site=$tableau_site

@@ -4,13 +4,20 @@ import os
 from log import MyLogger
 from functools import wraps
 from datetime import datetime
+import argparse
+
+import sys
+
+TABLEAU_PAT_NAME = os.environ['tableau_pat_name']
+TABLEAU_PAT_TOKEN = os.environ['tableau_pat_token']
+TABLEAU_SITE = os.environ['tableau_site']
 
 logger = MyLogger(log_file='tableau.log', log_path='logs', name=__name__)
 
 # tableau_auth = TSC.TableauAuth('USERNAME', 'PASSWORD', 'SITENAME')
-tableau_auth = TSC.PersonalAccessTokenAuth('dvd-test',
-        'JE5h4Vg6QG6BlULks0F5SQ==:I72UGbMZPbMDk5jYVaD33SrDgN9Kn15m',
-        'dsmdaviddev799594')
+tableau_auth = TSC.PersonalAccessTokenAuth(TABLEAU_PAT_NAME,
+        TABLEAU_PAT_TOKEN,
+        TABLEAU_SITE)
 
 server = TSC.Server('https://10ax.online.tableau.com/', use_server_version=True)
 
@@ -102,10 +109,7 @@ def modified_files():
     for root, dirs, files in os.walk('.', topdown=False):
         lf.extend([os.path.join(root, name) for name in files])
     return lf
-    twbx = list(filter(lambda x: 'twbx' in x, lf))
-    print(twbx)
-    sample = twbx[0]
-    print(sample)
+
     print('start_processing')
     print(process_full_path(sample))
     print('end_processing')
@@ -138,6 +142,30 @@ def assign_types(list_of_modified_files):
     types = {t:[] for t in types}
     for filename in list_of_modified_files:
         types[os.path.splitext(filename)[1]].append(filename)
+
+if __name__ == '__main__':
+    with open('modified_files.txt','r') as f:
+        lf = f.read()
+    print(lf)
+    lf = lf.replace('"','').replace('\n','').replace("'",'')
+    lf = lf.split(' ')
+    lf = list(filter(lambda x: 'twb' in x or 'tds' in x, lf))
+    print(lf)
+    # parser = argparse.ArgumentParser()
+    # parser.add_argument('--modified', help='Files to process as a space separated list', required=False)
+    # args = parser.parse_args()
+    # print('Modified files passed:')
+    # print(args.modified)
+    # lf = args.modified
+    if not lf:
+        lf = modified_files()
+
+    twbx = list(filter(lambda x: 'twbx' in x, lf))
+    print(twbx)
+    # sample = twbx[0]
+    for sample in twbx:
+        print(sample)
+        process_full_path(sample)
 ## adding a comment    
 
 # does the parent project exist?

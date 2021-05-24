@@ -1,11 +1,11 @@
 name: GitHub Actions Get Modified Files
-on: [push, pull_request]
+on: [pull_request]
 jobs:
   changedfiles:
     runs-on: ubuntu-latest
     # Map a step output to a job output
     outputs:
-      all: ${{ steps.changes.outputs.all}}
+      all: ${{ steps.changes.outputs.all }}
       ts: ${{ steps.changes.outputs.ts }}
     steps:
         # Make sure we have some code to diff.
@@ -17,19 +17,57 @@ jobs:
         id: changes
         # Set outputs using the command.
         run: |
-          echo "::set-output name=all::$(git diff --name-status ${{ github.event.before }} ${{ github.sha }} | xargs)"
+          echo "this is the pull_request.base.sha: ${{ github.event.pull_request.base.sha }} "
+          echo "this is the github.sha: ${{ github.sha }} "
+          git diff --name-status ${{ github.event.pull_request.base.sha }} ${{ github.sha }}
+          echo "::set-output name=all::$(git diff --name-status ${{ github.event.pull_request.base.sha }} ${{ github.sha }} | grep '.twb\|.tds' | xargs )"
           echo "::set-output name=ts::$(git diff --name-status --diff-filter=ACMRT ${{ github.event.pull_request.base.sha }} ${{ github.sha }} | grep .ts$ | xargs)"
+
+      - run: mkdir -p tmp/artifact
+      - run: echo hello > tmp/artifact/world.txt
+
+      # - uses: actions/upload-artifact@v2
+      #   with:
+      #     name: my-artifact
+      #     path: tmp/artifact/world.txt
+      #     retention-days: 1        
   lint:
     runs-on: ubuntu-latest
     # require the first job to have ran
     needs: changedfiles
     # only run there are changed files
-    if: ${{needs.changedfiles.outputs.ts}}
+    if: ${{needs.changedfiles.outputs.all}}
     steps:
       - name: echo changed files
         run: |
+          echo "echoing ls"
+          ls
+          touch test.tst
+          ls | xargs echo
+          ls -lari 
           echo "echoing outputs.ts"
           echo ${{needs.changedfiles.outputs.ts}}
           echo "echoing outputs.all"
           echo ${{needs.changedfiles.outputs.all}}
+  tsc:
+    needs: changedfiles
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      # - uses: actions/download-artifact@v2
+      #   id: download
+      #   with:
+      #     name: my-artifact
+      #     path: ~/tmp
+      # - name: 'Echo download path'
+      #   run: echo ${{steps.download.outputs.download-path}}
+      - name: Attempt docker
+        uses: ./.github/action-tsc
+        env:
+          tableau_pat_name: ${{ secrets.tableau_pat_name }}
+          tableau_pat_token: ${{ secrets.tableau_pat_token }}
+          tableau_site: ${{ secrets.tableau_site }}
 
+        with:
+          modified_files: ${{needs.changedfiles.outputs.all}}
