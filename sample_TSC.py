@@ -162,9 +162,10 @@ if __name__ == '__main__':
 
     twbx = list(filter(lambda x: 'twbx' in x, lf))
     print(twbx)
-    sample = twbx[0]
-    print(sample)
-    process_full_path(sample)
+    # sample = twbx[0]
+    for sample in twbx:
+        print(sample)
+        process_full_path(sample)
 ## adding a comment    
 
 # does the parent project exist?
