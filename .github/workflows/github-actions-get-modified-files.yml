@@ -44,12 +44,11 @@ jobs:
     needs: lint
     steps:
       - name: Attempt docker
-        using: 'docker'
-        image: 'Dockerfile' 
+        uses: actions/modified_files_20210514
         env:
           tableau_pat_name: ${{ secrets.tableau_pat_name }}
           tableau_pat_token: ${{ secrets.tableau_pat_token }}
           tableau_site: ${{ tableau_site }}
 
-        args:
-          - ${{needs.changedfiles.outputs.all}}
+        with:
+          modified_files: ${{needs.changedfiles.outputs.all}}
