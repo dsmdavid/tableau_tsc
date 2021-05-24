@@ -147,10 +147,14 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--modified', help='Files to process as a space separated list', required=False)
     args = parser.parse_args()
+    print('Modified files passed:')
     print(args.modified)
-    lf = args.modified.split(' ')
-    if not lf:
+    lf = args.modified
+    if lf is None:
         lf = modified_files()
+    else:
+        lf = lf.split(' ')
+
     twbx = list(filter(lambda x: 'twbx' in x, lf))
     print(twbx)
     sample = twbx[0]
