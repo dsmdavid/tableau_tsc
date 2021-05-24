@@ -35,6 +35,7 @@ jobs:
           ls
           touch test.tst
           ls | xargs echo
+          ls -lari 
           echo "echoing outputs.ts"
           echo ${{needs.changedfiles.outputs.ts}}
           echo "echoing outputs.all"
