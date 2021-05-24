@@ -31,6 +31,8 @@ jobs:
     steps:
       - name: echo changed files
         run: |
+          echo "echoing ls"
+          ls
           echo "echoing outputs.ts"
           echo ${{needs.changedfiles.outputs.ts}}
           echo "echoing outputs.all"
