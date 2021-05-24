@@ -26,11 +26,11 @@ jobs:
       - run: mkdir -p tmp/artifact
       - run: echo hello > tmp/artifact/world.txt
 
-      - uses: actions/upload-artifact@v2
-        with:
-          name: my-artifact
-          path: tmp/artifact/world.txt
-          retention-days: 1        
+      # - uses: actions/upload-artifact@v2
+      #   with:
+      #     name: my-artifact
+      #     path: tmp/artifact/world.txt
+      #     retention-days: 1        
   lint:
     runs-on: ubuntu-latest
     # require the first job to have ran
@@ -55,13 +55,13 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - uses: actions/download-artifact@v2
-        id: download
-        with:
-          name: my-artifact
-          path: ~/tmp
-      - name: 'Echo download path'
-        run: echo ${{steps.download.outputs.download-path}}
+      # - uses: actions/download-artifact@v2
+      #   id: download
+      #   with:
+      #     name: my-artifact
+      #     path: ~/tmp
+      # - name: 'Echo download path'
+      #   run: echo ${{steps.download.outputs.download-path}}
       - name: Attempt docker
         uses: ./.github/action-tsc
         env:
