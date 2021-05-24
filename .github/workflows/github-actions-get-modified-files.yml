@@ -40,13 +40,13 @@ jobs:
           echo ${{needs.changedfiles.outputs.ts}}
           echo "echoing outputs.all"
           echo ${{needs.changedfiles.outputs.all}}
-    tsc:
-      using: 'docker'
-      image: 'Dockerfile' 
-      env:
-        tableau_pat_name: ${{ secrets.tableau_pat_name }}
-        tableau_pat_token: ${{ secrets.tableau_pat_token }}
-        tableau_site: ${{ tableau_site }}
+  tsc:
+    using: 'docker'
+    image: 'Dockerfile' 
+    env:
+      tableau_pat_name: ${{ secrets.tableau_pat_name }}
+      tableau_pat_token: ${{ secrets.tableau_pat_token }}
+      tableau_site: ${{ tableau_site }}
 
-      args:
-        - ${{needs.changedfiles.outputs.all}}
+    args:
+      - ${{needs.changedfiles.outputs.all}}
