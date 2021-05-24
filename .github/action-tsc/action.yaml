@@ -7,6 +7,6 @@ inputs:
     default: 'World'
 runs:
   using: 'docker'
-  image: './Dockerfile'
+  image: '../../Dockerfile'
   args:
     - ${{ inputs.modified_files }}
