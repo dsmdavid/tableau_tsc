@@ -33,6 +33,8 @@ jobs:
         run: |
           echo "echoing ls"
           ls
+          touch test.tst
+          ls
           echo "echoing outputs.ts"
           echo ${{needs.changedfiles.outputs.ts}}
           echo "echoing outputs.all"
