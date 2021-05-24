@@ -41,7 +41,7 @@ jobs:
           echo "echoing outputs.all"
           echo ${{needs.changedfiles.outputs.all}}
   tsc:
-    needs: lint
+    needs: changedfiles
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
