@@ -58,3 +58,14 @@
 2021-05-24 15:30:41,978 - __main__ - DEBUG - call - Starting function get_project
 2021-05-24 15:30:41,981 - __main__ - DEBUG - login - Logging in from get_project
 2021-05-24 15:30:43,295 - __main__ - DEBUG - process_full_path - Finished processing full path forxs sample_wb/deprecated/WorkoutWednesday-2021-19-Layers.twbx
+2021-05-24 15:40:15,971 - __main__ - DEBUG - call - Starting function get_project
+2021-05-24 15:40:15,972 - __main__ - DEBUG - login - Logging in from get_project
+2021-05-24 15:40:16,694 - __main__ - DEBUG - process_full_path - Finished processing full path forxs sample_wb/WorkoutWednesday-2021-19-Layers.twbx
+2021-05-24 14:59:49,839 - __main__ - DEBUG - call - Starting function get_project
+2021-05-24 14:59:49,842 - __main__ - DEBUG - login - Logging in from get_project
+2021-05-24 14:59:50,423 - __main__ - DEBUG - call - Starting function get_project
+2021-05-24 14:59:50,427 - __main__ - DEBUG - login - Logging in from get_project
+2021-05-24 14:59:51,636 - __main__ - DEBUG - process_full_path - Finished processing full path forxs ./parent_github_1/child_github_3/WorkoutWednesday-2021-19-Layers.twbx
+2021-05-24 15:07:10,803 - __main__ - DEBUG - call - Starting function get_project
+2021-05-24 15:07:10,806 - __main__ - DEBUG - login - Logging in from get_project
+2021-05-24 15:07:11,354 - __main__ - DEBUG - process_full_path - Finished processing full path forxs sample_wb/WorkoutWednesday-2021-19-Layers.twbx
