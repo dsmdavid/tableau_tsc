@@ -1,56 +1,31 @@
-2021-05-20 11:14:32,766 - __main__ - DEBUG - call - Starting function get_project
-2021-05-20 11:14:32,774 - __main__ - DEBUG - login - Logging in from get_project
-2021-05-20 11:14:33,481 - __main__ - DEBUG - call - Starting function create_project
-2021-05-20 11:14:33,481 - __main__ - DEBUG - login - Logging in from create_project
-2021-05-20 11:14:35,261 - __main__ - INFO - create_project - ('sample_wb', '792e5421-36b9-4379-9afb-b874e279f8bc') was created
-2021-05-20 11:14:35,434 - __main__ - DEBUG - process_full_path - Finished processing full path for ./sample_wb/WorkoutWednesday-2021-19-Layers.twbx
-2021-05-20 11:15:00,412 - __main__ - DEBUG - call - Starting function get_project
-2021-05-20 11:15:00,412 - __main__ - DEBUG - login - Logging in from get_project
-2021-05-20 11:15:01,164 - __main__ - DEBUG - process_full_path - Finished processing full path for ./sample_wb/WorkoutWednesday-2021-19-Layers.twbx
-2021-05-20 11:15:38,140 - __main__ - DEBUG - call - Starting function get_project
-2021-05-20 11:15:38,141 - __main__ - DEBUG - login - Logging in from get_project
-2021-05-20 11:15:38,809 - __main__ - DEBUG - call - Starting function create_project
-2021-05-20 11:15:38,809 - __main__ - DEBUG - login - Logging in from create_project
-2021-05-20 11:15:40,643 - __main__ - INFO - create_project - ('parent_github_1', '4418d929-e94c-4dfd-9996-32ca76b2e4a8') was created
-2021-05-20 11:15:40,818 - __main__ - DEBUG - call - Starting function get_project
-2021-05-20 11:15:40,818 - __main__ - DEBUG - login - Logging in from get_project
-2021-05-20 11:15:41,991 - __main__ - DEBUG - call - Starting function create_project
-2021-05-20 11:15:41,991 - __main__ - DEBUG - login - Logging in from create_project
-2021-05-20 11:20:34,233 - __main__ - DEBUG - call - Starting function get_project
-2021-05-20 11:20:34,234 - __main__ - DEBUG - login - Logging in from get_project
-2021-05-20 11:20:34,947 - __main__ - DEBUG - call - Starting function create_project
-2021-05-20 11:20:34,947 - __main__ - DEBUG - login - Logging in from create_project
-2021-05-20 11:20:36,557 - __main__ - INFO - create_project - ('parent_github_1', '89a604f5-c4a4-48ef-8045-69de68174ce2') was created
-2021-05-20 11:20:36,727 - __main__ - DEBUG - call - Starting function get_project
-2021-05-20 11:20:36,727 - __main__ - DEBUG - login - Logging in from get_project
-2021-05-20 11:20:37,963 - __main__ - DEBUG - call - Starting function create_project
-2021-05-20 11:20:37,963 - __main__ - DEBUG - login - Logging in from create_project
-2021-05-20 11:23:36,364 - __main__ - DEBUG - call - Starting function get_project
-2021-05-20 11:23:36,365 - __main__ - DEBUG - login - Logging in from get_project
-2021-05-20 11:23:37,055 - __main__ - DEBUG - call - Starting function create_project
-2021-05-20 11:23:37,056 - __main__ - DEBUG - login - Logging in from create_project
-2021-05-20 11:23:38,788 - __main__ - INFO - create_project - ('parent_github_1', '86eb4728-89f3-4e94-92fe-e41145474109') was created
-2021-05-20 11:23:38,959 - __main__ - DEBUG - call - Starting function get_project
-2021-05-20 11:23:38,960 - __main__ - DEBUG - login - Logging in from get_project
-2021-05-20 11:23:40,175 - __main__ - DEBUG - call - Starting function create_project
-2021-05-20 11:23:40,175 - __main__ - DEBUG - login - Logging in from create_project
-2021-05-20 11:23:41,790 - __main__ - INFO - create_project - ('child_github_3', 'a3625886-6974-40db-8b94-4cf97dc92ae4') was created
-2021-05-20 11:23:41,953 - __main__ - DEBUG - process_full_path - Finished processing full path for ./parent_github_1/child_github_3/WorkoutWednesday-2021-19-Layers.twbx
-2021-05-20 11:29:38,799 - __main__ - DEBUG - call - Starting function get_project
-2021-05-20 11:29:38,800 - __main__ - DEBUG - login - Logging in from get_project
-2021-05-20 11:30:30,251 - __main__ - DEBUG - call - Starting function get_project
-2021-05-20 11:30:30,253 - __main__ - DEBUG - login - Logging in from get_project
-2021-05-20 11:31:01,923 - __main__ - DEBUG - call - Starting function get_project
-2021-05-20 11:31:01,924 - __main__ - DEBUG - login - Logging in from get_project
-2021-05-20 11:32:03,612 - __main__ - DEBUG - call - Starting function get_project
-2021-05-20 11:32:03,614 - __main__ - DEBUG - login - Logging in from get_project
-2021-05-20 11:33:04,329 - __main__ - DEBUG - call - Starting function get_project
-2021-05-20 11:33:04,330 - __main__ - DEBUG - login - Logging in from get_project
-2021-05-20 11:33:07,877 - __main__ - DEBUG - call - Starting function get_project
-2021-05-20 11:33:07,878 - __main__ - DEBUG - login - Logging in from get_project
-2021-05-20 11:33:11,113 - __main__ - DEBUG - process_full_path - Finished processing full path for ./parent_github_1/child_github_3/WorkoutWednesday-2021-19-Layers.twbx
-2021-05-20 11:33:32,558 - __main__ - DEBUG - call - Starting function get_project
-2021-05-20 11:33:32,558 - __main__ - DEBUG - login - Logging in from get_project
-2021-05-20 11:33:33,316 - __main__ - DEBUG - call - Starting function get_project
-2021-05-20 11:33:33,316 - __main__ - DEBUG - login - Logging in from get_project
-2021-05-20 11:33:34,492 - __main__ - DEBUG - process_full_path - Finished processing full path for ./parent_github_1/child_github_3/WorkoutWednesday-2021-19-Layers.twbx
+2021-05-24 12:02:51,100 - __main__ - DEBUG - call - Starting function get_project
+2021-05-24 12:02:51,101 - __main__ - DEBUG - login - Logging in from get_project
+2021-05-24 12:02:51,817 - __main__ - DEBUG - call - Starting function get_project
+2021-05-24 12:02:51,817 - __main__ - DEBUG - login - Logging in from get_project
+2021-05-24 12:02:53,004 - __main__ - DEBUG - process_full_path - Finished processing full path forxs ./parent_github_1/child_github_3/WorkoutWednesday-2021-19-Layers.twbx
+2021-05-24 11:03:44,444 - __main__ - DEBUG - call - Starting function get_project
+2021-05-24 11:03:44,448 - __main__ - DEBUG - login - Logging in from get_project
+2021-05-24 11:03:45,122 - __main__ - DEBUG - call - Starting function get_project
+2021-05-24 11:03:45,123 - __main__ - DEBUG - login - Logging in from get_project
+2021-05-24 11:03:46,275 - __main__ - DEBUG - process_full_path - Finished processing full path forxs ./parent_github_1/child_github_3/WorkoutWednesday-2021-19-Layers.twbx
+2021-05-24 11:06:26,266 - __main__ - DEBUG - call - Starting function get_project
+2021-05-24 11:06:26,268 - __main__ - DEBUG - login - Logging in from get_project
+2021-05-24 11:06:26,795 - __main__ - DEBUG - call - Starting function get_project
+2021-05-24 11:06:26,798 - __main__ - DEBUG - login - Logging in from get_project
+2021-05-24 11:06:27,865 - __main__ - DEBUG - process_full_path - Finished processing full path forxs ./parent_github_1/child_github_3/WorkoutWednesday-2021-19-Layers.twbx
+2021-05-24 11:16:12,310 - __main__ - DEBUG - call - Starting function get_project
+2021-05-24 11:16:12,312 - __main__ - DEBUG - login - Logging in from get_project
+2021-05-24 11:16:12,873 - __main__ - DEBUG - call - Starting function get_project
+2021-05-24 11:16:12,876 - __main__ - DEBUG - login - Logging in from get_project
+2021-05-24 11:16:14,016 - __main__ - DEBUG - process_full_path - Finished processing full path forxs ./parent_github_1/child_github_3/WorkoutWednesday-2021-19-Layers.twbx
+2021-05-24 11:18:33,221 - __main__ - DEBUG - call - Starting function get_project
+2021-05-24 11:18:33,225 - __main__ - DEBUG - login - Logging in from get_project
+2021-05-24 11:18:33,816 - __main__ - DEBUG - call - Starting function create_project
+2021-05-24 11:18:33,820 - __main__ - DEBUG - login - Logging in from create_project
+2021-05-24 11:18:34,996 - __main__ - INFO - create_project - ('sample_wb', '29ff7696-de56-4d85-8ef9-2d1de163902b') was created
+2021-05-24 11:18:35,170 - __main__ - DEBUG - call - Starting function get_project
+2021-05-24 11:18:35,172 - __main__ - DEBUG - login - Logging in from get_project
+2021-05-24 11:18:36,250 - __main__ - DEBUG - call - Starting function create_project
+2021-05-24 11:18:36,252 - __main__ - DEBUG - login - Logging in from create_project
+2021-05-24 11:18:37,403 - __main__ - INFO - create_project - ('deprecated', 'ae3669ca-3077-4141-960d-ad6a9093f124') was created
+2021-05-24 11:18:37,541 - __main__ - DEBUG - process_full_path - Finished processing full path forxs sample_wb/deprecated/WorkoutWednesday-2021-19-Layers.twbx
