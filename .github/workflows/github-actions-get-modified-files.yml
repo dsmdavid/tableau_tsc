@@ -45,7 +45,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Attempt docker
-        uses: ./.github/action-tsc/action-tsc
+        uses: ./.github/action-tsc
         env:
           tableau_pat_name: ${{ secrets.tableau_pat_name }}
           tableau_pat_token: ${{ secrets.tableau_pat_token }}
